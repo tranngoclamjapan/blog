@@ -4,6 +4,7 @@ async function connect() {
     await mongoose.connect("mongodb://localhost:27017/kawaiistore_dev", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      useCreateIndex: true,
     });
     console.log("Connect succsessfuly!!!");
   } catch (error) {
