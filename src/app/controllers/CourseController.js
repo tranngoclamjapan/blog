@@ -22,12 +22,12 @@ class CourseController {
     const formData = req.body;
     formData.image =
       "https://img.youtube.com/vi/" + `${req.body.videoId}` + "/sddefault.jpg";
-
+    formData._id = 1;
     const course = new Course(formData);
     course
       .save()
       .then(() => res.redirect("/me/stored/courses"))
-      .catch((error) => {});
+      .catch(next);
   }
   //[GET] /news/:id/edit
   edit(req, res, next) {
